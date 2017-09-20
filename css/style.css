@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif; }
+  body h1 {
+    color: #1d00ba; }
+  body .grid {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 100px;
+    grid-auto-rows: 50px;
+    grid-gap: 20px; }
+    body .grid div {
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border-radius: 4px;
+      padding: 0.3em; }
+      body .grid div:nth-child(odd) {
+        background: #6f54ff; }
+      body .grid div:nth-child(even) {
+        background: #1d00ba; }
+  body a {
+    font-weight: 700;
+    color: #6f54ff; }
+  body footer {
+    margin-top: 3rem; }
+
+/*# sourceMappingURL=sourcemaps/style.css.map */
