@@ -3,6 +3,7 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var inject = require('gulp-inject');
 var siteServer = require('browser-sync').create('siteServer');
+var deploy = require('gulp-gh-pages');
 
 gulp.task('watchers', ['siteServer'], function() {
     gulp.watch(['source/_html/**/*.html'], function(file) {
@@ -76,4 +77,9 @@ gulp.task('siteServer', function() {
         },
         notify: false
     });
+});
+
+gulp.task('deploy', function(){
+    return gulp.src("./build/**/*", "!./build/css/sourcemaps/*")
+    .pipe(deploy());
 });
