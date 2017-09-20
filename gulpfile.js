@@ -80,6 +80,6 @@ gulp.task('siteServer', function() {
 });
 
 gulp.task('deploy', function(){
-    return gulp.src("./build/**/*", "!./build/css/sourcemaps/*")
+    return gulp.src(["./build/**/*", "!./build/css/sourcemaps/*"])
     .pipe(deploy());
 });
