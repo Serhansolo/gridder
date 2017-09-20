@@ -1,4 +1,46 @@
+$gridItemColor: white;
+$gridItemBackground: #6f54ff;
+$headingColor: darken($gridItemBackground, 30%);
+$footerColor: $gridItemBackground;
+
 body {
-  background: darken(red, 15%);
-  color:white;
+  font-family: sans-serif;
+
+  h1 {
+    color: $headingColor;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 100px;
+    grid-auto-rows: 50px;
+    grid-gap: 20px;
+
+    div {
+      color: $gridItemColor;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border-radius: 4px;
+      padding: 0.3em;
+
+      &:nth-child(odd) {
+        background: $gridItemBackground;
+      }
+      &:nth-child(even) {
+        background: darken($gridItemBackground, 30%);
+      }
+    }
+  }
+
+  a {
+    font-weight: 700;
+    color: $footerColor;
+  }
+
+  footer {
+    margin-top: 3rem;
+  }
+
 }
+

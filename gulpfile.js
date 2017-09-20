@@ -31,7 +31,7 @@ gulp.task('HTML', function() {
         removeTags: true
     };
 
-    return gulp.src('source/_html/index.html')
+    return gulp.src('source/_html/**/*.html')
     .pipe(inject(injectCSSAssetFiles, injectCSSAssetOptions))
     .pipe(inject(injectCSSGlobalFiles, injectCSSGlobalOptions))
     .pipe(gulp.dest('build'))
