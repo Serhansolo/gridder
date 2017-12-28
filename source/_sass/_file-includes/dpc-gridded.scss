@@ -1,0 +1,85 @@
+@import "../_base/variables";
+@import "../_base/mixins";
+
+.grid {
+    $headercolor: #cd6b77;
+    .logo {
+        grid-area: logo;
+        border: 1px dashed darken($headercolor, 20%);
+        background: lighten($headercolor, 20%);
+        text-align: center;
+        height: 80px;
+    }
+    .navbar {
+        border: 1px dashed darken($headercolor, 20%);
+        background: blue;
+        grid-area: navbar;
+        display: grid;
+        grid-template-columns: 1fr $siteWidth 1fr;
+        .navWrapper {
+            grid-column: 2 / 3;
+            display: flex;
+            justify-content: space-between;
+            padding: 1em 0;
+            font-size: 1.5rem;
+            .breadcrumb {
+                border: 1px dashed darken($headercolor, 40%);
+                background: lighten($headercolor, 30%);
+            }
+            .search {
+                border: 1px dashed darken($headercolor, 40%);
+                background: lighten($headercolor, 30%);
+            }
+
+        }
+    }
+
+    #content {
+        grid-area: content;
+        $content: darkseagreen;
+        border: 1px dashed darken($content, 10);
+        background: $content;
+    }
+
+    #footer {
+        grid-area: footer;
+        $content: #56a4bc;
+        border: 1px dashed darken($content, 10);
+        background: blue;
+        display: grid;
+        grid-template-columns: 1fr $siteWidth 1fr;
+        .footerWrapper {
+            grid-column: 2 / 3;
+            display: flex;
+            justify-content: space-between;
+            .pay-off {
+                font-size: 3rem;
+                border: 1px dashed darken($content, 20%);
+                background: lighten($content, 20%);
+            }
+            .footerNav {
+                border: 1px dashed darken($content, 20%);
+                background: lighten($content, 20%);
+
+                .list {
+                    margin-left: 2rem;
+                    h3 {
+                        margin: 0;
+                        padding: 0;
+                    }
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                }
+            }
+        }
+    }
+
+    display: grid;
+    grid-template-columns: 1fr $siteWidth 1fr;
+    grid-template-areas:
+            "... logo ..."
+            "navbar navbar navbar"
+            "... content ..."
+            "footer footer footer"
+}

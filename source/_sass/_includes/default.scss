@@ -1,0 +1,22 @@
+@import "../_base/variables";
+body {
+    font-family: sans-serif;
+    //background: ivory;
+    margin: 0;
+    padding: 0;
+
+    h1 {
+        color: $headingColor;
+    }
+
+    a {
+        font-weight: 700;
+        color: $footerColor;
+    }
+
+    footer {
+        margin-top: 3rem;
+    }
+
+}
+

@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var plumber = require('gulp-plumber');
 var sourcemaps = require('gulp-sourcemaps');
 var inject = require('gulp-inject');
 var siteServer = require('browser-sync').create('siteServer');
@@ -10,21 +11,13 @@ gulp.task('watchers', ['siteServer'], function() {
         gulp.start('HTML');
     });
     gulp.watch(['source/_sass/**/*.scss'], function(file) {
-        gulp.start('CSS');
+        gulp.start('injectStyleCSS');
+        gulp.start('buildFileCss');
     });
 });
 
 gulp.task('HTML', function() {
-    var injectCSSAssetFiles = gulp.src(['build/css/assets/**/*.css']);
-    var injectCSSGlobalFiles = gulp.src(['build/css/style.css']);
-
-    var injectCSSAssetOptions = {
-        addRootSlash: false,
-        ignorePath: ['source', 'build'],
-        removeTags: true,
-        starttag: '<!--inject:assetcss-->',
-        endtag: '<!--endinject-->'
-    };
+    var injectCSSGlobalFile = gulp.src(['build/css/style.css']);
     var injectCSSGlobalOptions = {
         addRootSlash: false,
         ignorePath: ['source', 'build'],
@@ -32,15 +25,31 @@ gulp.task('HTML', function() {
     };
 
     return gulp.src('source/_html/**/*.html')
-    .pipe(inject(injectCSSAssetFiles, injectCSSAssetOptions))
-    .pipe(inject(injectCSSGlobalFiles, injectCSSGlobalOptions))
+    .pipe(inject(injectCSSGlobalFile, injectCSSGlobalOptions))
     .pipe(gulp.dest('build'))
 });
 
-gulp.task('CSS', function() {
-    var injectAppFiles = gulp.src('source/_sass/_include/*.scss', {read: false});
+gulp.task('buildFileCss', function() {
+    return gulp.src('./source/_sass/_file-includes/*.scss')
+    .pipe(
+        plumber({
+            errorHandler: function(err) {
+                console.log(err);
+                this.emit('end');
+            }
+        })
+    )
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(sourcemaps.write('sourcemaps'))
+    .pipe(gulp.dest('build/css'))
+});
+
+gulp.task('injectStyleCSS', function() {
+    var injectAppFiles = gulp.src('source/_sass/_includes/*.scss', {read: false});
 
     function transformFilepath(filepath) {
+        console.log(filepath);
         return '@import "' + filepath + '";';
     }
 
@@ -52,6 +61,14 @@ gulp.task('CSS', function() {
     };
 
     return gulp.src('source/_sass/style.scss')
+    .pipe(
+        plumber({
+            errorHandler: function(err) {
+                console.log(err);
+                this.emit('end');
+            }
+        })
+    )
     .pipe(inject(injectAppFiles, injectAppOptions))
     .pipe(sourcemaps.init())
     .pipe(sass())
@@ -59,8 +76,7 @@ gulp.task('CSS', function() {
     .pipe(gulp.dest('build/css'))
 });
 
-
-gulp.task('buildAll', ['HTML', 'CSS'], function() {
+gulp.task('buildAll', ['injectStyleCSS', 'buildFileCss', 'HTML'], function() {
     return true;
 });
 
@@ -79,7 +95,7 @@ gulp.task('siteServer', function() {
     });
 });
 
-gulp.task('deploy', function(){
+gulp.task('deploy', function() {
     return gulp.src(["./build/**/*", "!./build/css/sourcemaps/*"])
     .pipe(deploy());
 });

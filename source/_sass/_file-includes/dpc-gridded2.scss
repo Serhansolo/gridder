@@ -1,0 +1,180 @@
+@import "../_base/variables";
+@import "../_base/mixins";
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 90px auto auto auto auto 100px;
+    justify-self: center;
+    #logo {
+        grid-column: 1/4;
+        margin-left: 50%;
+    }
+    #header {
+        background: #01689b;
+        grid-column: 1/4;
+        display: grid;
+        grid-template-columns: 15px auto 15px;
+        grid-template-rows: 70px 70px auto;
+        align-items: flex-start;
+        #mainMenu {
+            grid-column: 2/3;
+            grid-row: 1/2;
+            font-size: 1.623em;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+
+            #breadCrumb {
+                padding: 18px 48px 18px 0;
+            }
+            .mainNav {
+                display: none;
+            }
+            .toggleNav {
+                width: 36px;
+                height: 32px;
+                border: 0;
+                background-color: white;
+                margin: 0;
+                padding: 0;
+                margin-top: 18px;
+            }
+        }
+        #heroImage {
+            grid-column: 1/4;
+            grid-row: 3/4;
+            min-height: 330px;
+            background-image: url(../img/hero1.jpg);
+            background-position: center center;
+            background-size: cover;
+            display: grid;
+        }
+        .topTaskNavigation {
+            margin-top: 15px;
+            padding: 5px 15px 5px 0;
+            background: white;
+            li {
+                margin-bottom: 10px;
+            }
+            a {
+                color: #01689b;
+                text-decoration: none;
+            }
+            z-index: 1;
+            align-self: flex-start;
+            grid-column: 2/3;
+            grid-row: 3/4;
+        }
+        #searchForm {
+            grid-column: 2/3;
+            grid-row: 2/3;
+
+            display: flex;
+            width: 100%;
+            input {
+                font-size: 1rem;
+                padding: .6rem;
+                width: 100%;
+            }
+            button {
+                font-size: 1rem;
+                padding: .7rem;
+                background: black;
+                border: 0;
+                color: white;
+            }
+        }
+    }
+    #editorialNavigation {
+        background: lightblue;
+        grid-column: 1/-1;
+    }
+    #content {
+        background: lightpink;
+        grid-column: 1/-1;
+    }
+    #footer {
+        background: lightsalmon;
+        grid-column: 1/-1;
+    }
+    #language {
+        background: lightskyblue;
+        grid-column: 1/-1;
+    }
+}
+
+@media only screen and (min-width: 620px) { // Tablet Portrait
+    .grid {
+        #header {
+            grid-template-rows: auto auto;
+            #mainMenu {
+                .mainNav {
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: flex-end;
+                    padding: 10px 0;
+                    a {
+                        font-size: .7em;
+                        line-height: 1em;
+                        color: white;
+                        font-weight: normal;
+                        text-decoration: none;
+                        margin-left: 30px;
+                        margin-top: 9px;
+                        display: inline-block;
+                        padding: 5px 0;
+                    }
+
+                }
+                .toggleNav {
+                    display: none;
+                }
+            }
+            #searchForm {
+                z-index: 1;
+
+                width: 47%;
+                margin-top: 15px;
+
+                grid-column: 2/3;
+                grid-row: 2/3;
+
+                justify-self: flex-end;
+                align-self: flex-start;
+            }
+            .topTaskNavigation {
+                width: 47%;
+
+                grid-column: 2/3;
+                grid-row: 2/3;
+            }
+            #heroImage {
+                z-index: 0;
+                grid-row: 2/3;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 980px) { // Tablet Landscape
+    .grid {
+        #header {
+            #searchForm {
+                width: 33%;
+            }
+            .topTaskNavigation {
+                width: 33%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) { // Desktop
+    .grid {
+        grid-template-columns: 1fr $siteWidth 1fr;
+        #header {
+            grid-template-columns: 1fr $siteWidth 1fr;
+        }
+    }
+}
