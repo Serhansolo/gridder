@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
     <meta charset="UTF-8">
     <title>DPC Grid</title>
@@ -8,7 +9,7 @@
     <link rel="stylesheet" href="css/dpc-gridded2.css">
 </head>
 <body>
-<div class="grid">
+<div id="the-grid">
     <div id="logo">
         <img src="img/logo-rijksoverheid2.svg" alt="Rijksoverheid">
     </div>
@@ -59,10 +60,271 @@
         </div>
         <div id="heroImage"></div>
     </div>
-    <!--<div id="editorialNavigation">Redactioneel Navigatieblok</div>-->
-    <!--<div id="content">Content 12 col of 6 col</div>-->
-    <!--<div id="footer">Footer</div>-->
-    <!--<div id="language">Talen</div>-->
+    <div id="editorialNavigation">
+        <div class="grid">
+            <div class="navItem">
+                <a href="/onderwerpen/themas/belastingen-uitkeringen-en-toeslagen">
+                    <div class="content">
+                        <h3>Belastingen, uitkeringen en toeslagen</h3>
+                        <p>Bijstand, AOW, WW-uitkering, Inkomstenbelasting, Wajong ...</p>
+                    </div>
+                </a>
+            </div>
+            <div class="navItem">
+                <a href="/onderwerpen/themas/bouwen-en-wonen">
+                    <div class="content">
+                        <h3>Bouwen en wonen</h3>
+                        <p>Huurwoning, Huurverhoging, Bouwregelgeving, Koopwoning, Energielabel woningen en gebouwen
+                            ...</p>
+                    </div>
+                </a>
+            </div>
+            <div class="navItem">
+                <a href="/onderwerpen/themas/economie">
+                    <div class="content">
+                        <h3>Economie</h3>
+                        <p>Ondernemen en innovatie, Overheidsfinanciën, Duurzame economie, Zelfstandigen zonder
+                            personeel ...</p>
+                    </div>
+                </a>
+            </div>
+            <div class="navItem">
+                <a href="/onderwerpen/themas/familie-zorg-en-gezondheid">
+                    <div class="content">
+                        <h3>Familie, zorg en gezondheid</h3>
+                        <p>Zorg en ondersteuning thuis, Overlijden, 18 jaar worden, Scheiden of uit elkaar gaan ...</p>
+                    </div>
+                </a>
+            </div>
+            <div class="navItem">
+                <a href="/onderwerpen/themas/internationale-samenwerking">
+                    <div class="content">
+                        <h3>Internationale samenwerking</h3>
+                        <p>Europese Unie, Mensenrechten, Handelsverdragen EU ...</p>
+                    </div>
+                </a>
+            </div>
+            <div class="navItem">
+                <a href="/onderwerpen/themas/milieu-en-natuur">
+                    <div class="content">
+                        <h3>Milieu en natuur</h3>
+                        <p>Vogelgriep, Duurzame energie, Klimaatverandering, Afval, Dierenwelzijn ...</p>
+                    </div>
+                </a>
+            </div>
+            <div class="navItem">
+                <a href="/onderwerpen/themas/migratie-en-reizen">
+                    <div class="content">
+                        <h3>Migratie en reizen</h3>
+                        <p>Paspoort en identiteitskaart, Ambassades, Nederlandse nationaliteit ...</p>
+                    </div>
+                </a>
+            </div>
+            <div class="navItem">
+                <a href="/onderwerpen/themas/onderwijs">
+                    <div class="content">
+                        <h3>Onderwijs</h3>
+                        <p>Schoolvakantie, Werken in het onderwijs, Hoger onderwijs, Basisonderwijs, Mbo ...</p>
+                    </div>
+                </a>
+            </div>
+            <div class="navItem">
+                <a href="/onderwerpen/themas/overheid-en-democratie">
+                    <div class="content">
+                        <h3>Overheid en democratie</h3>
+                        <p>Persoonsgegevens, Verkiezingen, Gemeenten, Provincies, Koninklijk Huis ...</p>
+                    </div>
+                </a>
+            </div>
+            <div class="navItem">
+                <a href="/onderwerpen/themas/recht-veiligheid-en-defensie">
+                    <div class="content">
+                        <h3>Recht, veiligheid en defensie</h3>
+                        <p>Identiteitsfraude, Vuurwerk, Ouderlijk gezag en voogdij ...</p>
+                    </div>
+                </a>
+            </div>
+            <div class="navItem">
+                <a href="/onderwerpen/themas/verkeer-en-vervoer">
+                    <div class="content">
+                        <h3>Verkeer en vervoer</h3>
+                        <p>Rijbewijs, Verkeersregels, Openbaar vervoer, Verkeersveiligheid, Bijzondere voertuigen
+                            ...</p>
+                    </div>
+                </a>
+            </div>
+            <div class="navItem">
+                <a href="/onderwerpen/themas/werk">
+                    <div class="content">
+                        <h3>Werk</h3>
+                        <p>Minimumloon, Arbeidsovereenkomst en cao, Met pensioen gaan, Werkloos worden ...</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div class="grid">
+            <div class="two-thirds">
+                <p>'Samen leven en wonen, in een democratische rechtsstaat, met een slagvaardig bestuur. BZK, duidelijk
+                    voor mensen'. Dit is de missie van BZK.
+                    Het ministerie van BZK borgt de kernwaarden van de democratie. BZK staat voor een goed en
+                    slagvaardig openbaar bestuur en een overheid waar burgers op kunnen vertrouwen. BZK draagt eraan bij
+                    dat burgers kunnen wonen in betaalbare, veilige en energiezuinige woningen in een buurt waar
+                    iedereen meetelt en meedoet en het prettig leven is.</p>
+            </div>
+            <div class="full-width">
+                <div class="block">
+                    <h2>Brick met titel</h2>
+                    <img src="/img/dummy-picture.png">
+                    <a href="#"><h3>Benoeming directeur-generaal Luchtvaart en Maritieme Zaken bij Infrastructuur en
+                        Waterstaat</h3></a>
+                </div>
+                <div class="block">
+                    <h2>Brick met titel</h2>
+                    <img src="/img/dummy-picture.png">
+                    <a href="#"><h3>Benoeming directeur-generaal Luchtvaart en Maritieme Zaken bij Infrastructuur en
+                        Waterstaat</h3></a>
+                </div>
+                <div class="blocks">
+                    <h2>Bewindspersonen</h2>
+                    <div class="block">
+                        <img src="/img/dummy-picture.png">
+                        <a href="#"><h3>Kajsa Ollongren</h3></a>
+                    </div>
+                    <div class="block">
+                        <img src="/img/dummy-picture.png">
+                        <a href="#"><h3>Raymond Knops</h3></a>
+                    </div>
+                </div>
+                <div class="blocks">
+                    <h2>Nieuws</h2>
+                    <div class="block">
+                        <img src="/img/dummy-picture.png">
+                        <a href="#"><h3>Benoeming directeur-generaal Luchtvaart en Maritieme Zaken bij Infrastructuur en
+                            Waterstaat</h3></a>
+                        <small>22-12-2017 | 14:13</small>
+                        <p>Mr. ing. J.H. (Jan Hendrik) Dronkers wordt directeur-generaal Luchtvaart en Maritieme Zaken
+                            en tevens loco secretaris-generaal...</p>
+                    </div>
+                    <div class="block">
+                        <img src="/img/dummy-picture.png">
+                        <a href="#"><h3>Benoeming directeur-generaal Luchtvaart en Maritieme Zaken bij Infrastructuur en
+                            Waterstaat</h3></a>
+                        <small>22-12-2017 | 14:13</small>
+                        <p>Mr. ing. J.H. (Jan Hendrik) Dronkers wordt directeur-generaal Luchtvaart en Maritieme Zaken
+                            en tevens loco secretaris-generaal...</p>
+                    </div>
+                    <div class="block">
+                        <img src="/img/dummy-picture.png">
+                        <a href="#"><h3>Benoeming directeur-generaal Luchtvaart en Maritieme Zaken bij Infrastructuur en
+                            Waterstaat</h3></a>
+                        <small>22-12-2017 | 14:13</small>
+                        <p>Mr. ing. J.H. (Jan Hendrik) Dronkers wordt directeur-generaal Luchtvaart en Maritieme Zaken
+                            en tevens loco secretaris-generaal...</p>
+                    </div>
+                    <div class="block">
+                        <img src="/img/dummy-picture.png">
+                        <a href="#"><h3>Benoeming directeur-generaal Luchtvaart en Maritieme Zaken bij Infrastructuur en
+                            Waterstaat</h3></a>
+                        <small>22-12-2017 | 14:13</small>
+                        <p>Mr. ing. J.H. (Jan Hendrik) Dronkers wordt directeur-generaal Luchtvaart en Maritieme Zaken
+                            en tevens loco secretaris-generaal...</p>
+                    </div>
+                    <div class="block">
+                        <img src="/img/dummy-picture.png">
+                        <a href="#"><h3>Benoeming directeur-generaal Luchtvaart en Maritieme Zaken bij Infrastructuur en
+                            Waterstaat</h3></a>
+                        <small>22-12-2017 | 14:13</small>
+                        <p>Mr. ing. J.H. (Jan Hendrik) Dronkers wordt directeur-generaal Luchtvaart en Maritieme Zaken
+                            en tevens loco secretaris-generaal...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<hr>
+<hr>
+<hr>
+<div id="the-grid">
+    <div id="logo">
+        <img src="img/logo-rijksoverheid2.svg" alt="Rijksoverheid">
+    </div>
+    <div id="header">
+        <div id="mainMenu">
+            <div id="breadCrumb">Rijksoverheid.nl</div>
+            <button class="toggleNav"><span>Menu</span></button>
+            <nav class="mainNav">
+                <a href="#">Actueel</a>
+                <a href="#">Onderwerpen</a>
+                <a href="#">Ministeries</a>
+                <a href="#">Regering</a>
+                <a href="#">Documenten</a>
+                <a href="#">Doe mee</a>
+            </nav>
+        </div>
+        <div id="searchForm">
+            <input type="text">
+            <button>Zoek</button>
+        </div>
+        <div class="topTaskNavigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        Veranderingen in 2018</a>
+                </li>
+                <li>
+                    <a href="#">
+                        Bijstand</a>
+                </li>
+                <li>
+                    <a href="#">
+                        Minimumloon</a>
+                </li>
+                <li>
+                    <a href="#">
+                        Pasfoto voor paspoort of id-kaart</a>
+                </li>
+                <li>
+                    <a href="$">
+                        Schoolvakanties 2017-2018</a>
+                </li>
+                <li>
+                    <a href="/onderwerpen/zorgverzekering">
+                        Zorgverzekering</a>
+                </li>
+            </ul>
+        </div>
+        <div id="heroImage"></div>
+    </div>
+    <div id="content">
+        <div class="grid">
+            <div class="two-thirds-centered">
+                <h2 class="news">
+                    Benoeming directeur-generaal Luchtvaart en Maritieme Zaken bij Infrastructuur en Waterstaat</h2>
+                <p class="article-meta">
+                    Nieuwsbericht | 22-12-2017 | 14:13</p>
+                <div class="intro"><p>Mr. ing. J.H. (Jan Hendrik) Dronkers wordt directeur-generaal Luchtvaart en
+                    Maritieme Zaken en tevens loco secretaris-generaal bij het ministerie van Infrastructuur en
+                    Waterstaat (IenW). De ministerraad heeft op voorstel van minister Ollongren van Binnenlandse Zaken
+                    en Koninkrijksrelaties besloten hem voor te dragen. De benoeming gaat in op 1 januari 2018.</p>
+                </div>
+                <p>Jan Hendrik Dronkers vervult sinds mei 2017 de functie van loco secretaris-generaal bij IenW.
+                    Daarvoor was hij onder meer directeur-generaal Rijkswaterstaat, hoofdingenieur-directeur van de
+                    directie Noord-Holland en plaatsvervangend directeur-generaal Mobiliteit bij het toenmalige
+                    ministerie van Verkeer en Waterstaat.</p>
+                <p>Jan Hendrik Dronkers rondde de hts-opleidingen Civiele techniek en Economische bedrijfstechniek af en
+                    studeerde daarna Nederlands recht aan de Erasmus Universiteit Rotterdam.</p>
+                <p>De benoeming van de heer Dronkers is tot stand gekomen op basis van de procedure voor de
+                    topmanagementgroep van de Algemene Bestuursdienst.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div id="footer">Footer</div>-->
+<!--<div id="language">Talen</div>-->
 </div>
 </body>
 </html>

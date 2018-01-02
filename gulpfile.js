@@ -5,6 +5,8 @@ var sourcemaps = require('gulp-sourcemaps');
 var inject = require('gulp-inject');
 var siteServer = require('browser-sync').create('siteServer');
 var deploy = require('gulp-gh-pages');
+var autoprefixer = require('gulp-autoprefixer');
+
 
 gulp.task('watchers', ['siteServer'], function() {
     gulp.watch(['source/_html/**/*.html'], function(file) {
@@ -41,6 +43,16 @@ gulp.task('buildFileCss', function() {
     )
     .pipe(sourcemaps.init())
     .pipe(sass())
+    .pipe(autoprefixer(
+        {
+            grid:true,
+            browsers: [
+                "ie 10",
+                "ie 11",
+                "last 2 versions"
+            ]
+        }
+        ))
     .pipe(sourcemaps.write('sourcemaps'))
     .pipe(gulp.dest('build/css'))
 });
@@ -72,6 +84,16 @@ gulp.task('injectStyleCSS', function() {
     .pipe(inject(injectAppFiles, injectAppOptions))
     .pipe(sourcemaps.init())
     .pipe(sass())
+    .pipe(autoprefixer(
+        {
+            grid:true,
+            browsers: [
+                "ie 10",
+                "ie 11",
+                "last 2 versions"
+            ]
+        }
+    ))
     .pipe(sourcemaps.write('sourcemaps'))
     .pipe(gulp.dest('build/css'))
 });
